@@ -1,0 +1,15 @@
+                Text("tap")
+                    .onTapGesture {
+                        showPopover.toggle()
+                    }
+                    .background {
+                        GeometryReader { geo in
+                            Color.clear
+                                .anchorPreference(key: PopoverBoundsPreferenceKey.self,
+                                                  value: .bounds) { _ in geo.frame(in: .global) }
+                        }
+                    }
+                Spacer()
+            }
+            Spacer()
+        }
